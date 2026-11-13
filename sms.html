@@ -1,12 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Managment system</title>
     <link rel="stylesheet" href="sms.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Student Dashboard</h1>
+            <button class="theme-btn" id="themeToggle">🌓 Theme</button>
+        </header>
+        <!-- 
+         Main Content  -->
+        <div class="main-grid">
+            <div class="card">
+                <h2 id="formTitle">Add New Student</h2>
+                <form id="studentForm">
+                    <input type="hidden" id="studentIndex" value="">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" placeholder="e.g. Rahul Sharma">
+                        <div class="error-msg" id="nameError">Please enter a valid name.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Roll Number</label>
+                        <input type="text" id="roll" placeholder="e.g. 101">
+                        <div class="error-msg" id="rollError">Please enter a roll number.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Course</label>
+                        <select id="course">
+                            <option value="">Choose course...</option>
+                            <option value="BCA">BCA</option>
+                            <option value="B.Tech">B.Tech</option>
+                            <option value="B.Sc">B.Sc</option>
+                            <option value="B.Com">B.Com</option>
+                        </select>
+                        <div class="error-msg" id="courseError">Please select a course.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Marks (%)</label>
+                        <input type="number" id="marks" placeholder="e.g. 85">
+                        <div class="error-msg" id="marksError">Enter valid marks (0-100).</div>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submitBtn">Add Student</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Student Records</h2>
+
+                <!-- Search and Filter Bar -->
+                <div class="controls">
+                    <input type="text" id="searchBox" placeholder="Search by name or roll...">
+                    <select id="filterCourse">
+                        <option value="">All Courses</option>
+                        <option value="BCA">BCA</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="B.Sc">B.Sc</option>
+                        <option value="B.Com">B.Com</option>
+                    </select>
+                </div>
+
+                <!-- Table -->
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Roll</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Marks</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            <!-- Data will load dynamically via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Footer -->
+        <footer>
+            <p>Created with HTML, CSS & JavaScript Logic Building</p>
+        </footer>
+    </div>
+
+<script src="sms.js"></script>
 </body>
+
 </html>
