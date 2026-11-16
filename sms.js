@@ -17,3 +17,18 @@ let students = JSON.parse(localStorage.getItem('students_data')) || [
 ];
 renderTable();
 
+studentForm.addEventListener('submit',function(e) {
+    e.preventDefault();
+
+    if(!validForm()) {
+        return;
+    }
+
+    const studentData = {
+        roll: rollInput.value.trim(),
+        name: nameInput.value.trim(),
+        course: courseInput.value,
+        marks: marksInput.value
+    };
+    
+})
